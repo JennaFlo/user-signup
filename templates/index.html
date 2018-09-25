@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block content %}
+   <p></p>
+    <form action='/' method='post'>
+      <div>
+      <label for="username_box">Username</label>
+        <input id="username_box" type="text" name="username_info"/>
+      </div>
+      <br>
+      <div>
+       <label for="password">Password</label>
+         <input id="password" type="text" name="password-entered"/>
+      </div>
+      <br>
+      <div>
+        <label for="email">Email(optional)</label>
+          <input id="email_info" type="text" name="email_input"/>
+      </div>
+    
+    </form>
+
+{% endblock %}
