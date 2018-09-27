@@ -4,11 +4,14 @@ app = Flask(__name__)
 app.config['DEBUG'] = True 
 
 
-def
+@app.route('/')
+def index():
+    return render_template('index.html')
 
 
 
-@app.route('/', methods=['POST','GET'])
+#@app.route('/', methods=['POST','GET'])
+# about():
 
 
 
