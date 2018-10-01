@@ -11,10 +11,10 @@
       <label for="username_box">Username</label>
         <input id="username_box" type="text" name="username" value="{{username}}"/>
       {% if username_error == 'blank_error' %}
-        <p class="error"><strong>Error:</strong>You did not enter a username here!</p>
+        <span class="error"><strong>Error:</strong>You did not enter a username here!</span>
       {% endif %}
       {% if username_error == 'format_error' %}
-        <p class="error"><strong>Error:</strong>You must have 3-20 characters and no special characters!</p>
+        <span class="error"><strong>Error:</strong>You must have 3-20 characters and no special characters!</span>
       {% endif %}
       </div>
       <br>
@@ -23,11 +23,11 @@
          <input id="password" type="password" name="password_entered" value=""/>
       
       {% if password_error == 'blank_error' %}
-        <p class="error"><strong>Error:Invalid Info</strong>You did not enter a password</p>
+        <span class="error"><strong>Error:Invalid Info</strong>You did not enter a password</span>
       {% endif %}
       {% if password_error == 'format_error' %}
-      <p class="error"><strong>Error:Invalid Info</strong>You must have 3-20 characters and no special characters!</p>
-    {% endif %}
+      <span class="error"><strong>Error:Invalid Info</strong>You must have 3-20 characters and no special characters!</span>
+      {% endif %}
         </div>
       <br>
       <div>
@@ -35,10 +35,10 @@
           <input id="verifypassword" type="password" name="verifypassword_entered" value=""/>
       
       {% if verify_error == 'blank_error' %}
-        <p class="error"><strong>Invalid info</strong>You did not verify your password!</p>
+        <span class="error"><strong>Invalid info</strong>You did not verify your password!</span>
       {% endif %}
       {% if verify_error == 'format_error' %}
-      <p class="error"><strong>Error:Invalid Info</strong>The passwords do not match!</p>
+      <span class="error"><strong>Error:Invalid Info</strong>The passwords do not match!</span>
     {% endif %}
         </div>
       <br>
@@ -47,7 +47,7 @@
           <input id="email_info" type="text" name="email_input" value="{{email}}"/>
       
       {% if email_error == 'format_error' %}
-        <p class="error"><strong>Email info invalid</strong>You must have 3-20 characters and no special characters!</p>
+        <span class="error"><strong>Email info invalid</strong>You must have 3-20 characters and no special characters!</span>
       {% endif %}
         </div>
       <br>
