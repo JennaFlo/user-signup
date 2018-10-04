@@ -13,14 +13,24 @@ def username_test(username):
     if username == "":
         #return: "You forgot to enter a username"
         return "blank_error"
+    elif re.search("^\s", username) != None:
+        return "space_error"
+    elif re.search("^.+\s", username) != None:
+        return "space_error"
+    
     elif re.match("^[a-zA-Z0-9]{3,20}$", username) == None:
         #return "The username must have between 3 and 20 characters, and no special characters"
         return "format_error"
+    
     else:
         return ""
 def password_test(password):
     if password == "":
         return "blank_error"
+    elif re.search("^\s", password) != None:
+        return "space_error"
+    elif re.search("^.+\s", password) != None:
+        return "space_error"
     elif re.match("^[a-zA-Z0-9]{3,20}$", password) == None:
         return "format_error"
     else:
@@ -35,8 +45,22 @@ def verify_password_test(verify_password, password):
 def email_test(email):
     if email == "":
         return ""
-    if re.match("^[a-zA-Z0-9-_.]+@[a-zA-Z0-9-_.]+\.[a-zA-Z]{3,20}", email) == None:
+    elif re.search("^\s", email) != None:
+        return "space_error"
+    elif re.search("^.+\s", email) != None:
+        return "space_error"
+    elif re.match("^\@", email):
         return "format_error"
+    elif re.match("[^@]+@[^@]+\.[^@]", email) == None:
+        return "atsign_error"
+    
+    elif re.match("^[a-zA-Z0-9-_.]+@[a-zA-Z0-9-_.]+\.[a-zA-Z]{3,20}", email) == None:
+        return "format_error"
+    #elif re.match("^.{2,}", email) != None:
+        #return "period_error"
+    
+    
+    
     else:
         return ""
 

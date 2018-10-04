@@ -16,6 +16,9 @@
       {% if username_error == 'format_error' %}
         <span class="error"><strong>Error:</strong>You must have 3-20 characters and no special characters!</span>
       {% endif %}
+      {% if username_error == 'space_error' %}
+        <span class="error"><strong>Error:</strong>You cannot have a space!</span>
+      {% endif %}
       </div>
       <br>
       <div>
@@ -25,9 +28,13 @@
       {% if password_error == 'blank_error' %}
         <span class="error"><strong>Error:Invalid Info</strong>You did not enter a password</span>
       {% endif %}
+      {% if password_error == 'space_error' %}
+        <span class="error"><strong>Error:</strong>You cannot have a space!</span>
+      {% endif %}
       {% if password_error == 'format_error' %}
       <span class="error"><strong>Error:Invalid Info</strong>You must have 3-20 characters and no special characters!</span>
       {% endif %}
+      
         </div>
       <br>
       <div>
@@ -45,10 +52,19 @@
       <div>
         <label for="email">Email(optional)</label>
           <input id="email_info" type="text" name="email_input" value="{{email}}"/>
-      
-      {% if email_error == 'format_error' %}
-        <span class="error"><strong>Email info invalid</strong>You must have 3-20 characters and no special characters!</span>
+      {% if email_error == 'space_error' %}
+          <span class="error"><strong>Error:</strong>You cannot have a space!</span>
       {% endif %}
+      {% if email_error == 'atsign_error' %}
+          <span class="error"><strong>Error:</strong>You cannot more than one @ sign or period!</span>
+      {% endif %}
+      {% if email_error == 'period_error' %}
+        <span class="error"><strong>Error:</strong>You cannot have a more than one @ sign or period!</span>
+      {% endif %}
+      {% if email_error == 'format_error' %}
+        <span class="error"><strong>Email info invalid</strong>You must have 3-20 characters or more than one . or @!</span>
+      {% endif %}
+      
         </div>
       <br>
       <div>
